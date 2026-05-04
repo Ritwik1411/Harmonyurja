@@ -1,43 +1,113 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  show: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.08 * i,
+      duration: 0.55,
+      ease: [0.22, 1, 0.36, 1] as const,
+    },
+  }),
+};
+
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative min-h-[85vh] overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <Image
-          src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1800&q=80"
-          alt="Solar farm at golden hour"
+          src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=2000&q=85"
+          alt="Solar photovoltaic plant at sunrise"
           fill
           priority
-          className="object-cover opacity-30"
+          className="object-cover"
+          sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/92 to-background/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(56,189,248,0.18),transparent_50%)]" />
       </div>
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 py-24 lg:px-8 lg:py-32">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-          Vidish Urja Private Limited
-        </p>
-        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-white md:text-6xl">
-          Powering India&apos;s Clean Energy Future
-        </h1>
-        <p className="max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
-          Renewable energy development, EPC, and infrastructure solutions.
-        </p>
-        <div className="flex flex-wrap gap-4">
-          <Link
-            href="/projects"
-            className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-strong"
-          >
-            Explore Projects
-          </Link>
-          <Link
-            href="/contact"
-            className="rounded-full border border-border px-6 py-3 text-sm font-semibold text-white hover:border-primary"
-          >
-            Contact Us
-          </Link>
-        </div>
+
+      <div className="mx-auto flex w-full max-w-7xl flex-col justify-center gap-10 px-6 pb-24 pt-28 lg:min-h-[85vh] lg:px-8 lg:pb-32 lg:pt-36">
+        <motion.p
+          custom={0}
+          variants={fadeUp}
+          initial="hidden"
+          animate="show"
+          className="text-sm font-semibold uppercase tracking-[0.28em] text-accent"
+        >
+          Harmony Urja Pvt Ltd
+        </motion.p>
+
+        <motion.h1
+          custom={1}
+          variants={fadeUp}
+          initial="hidden"
+          animate="show"
+          className="max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-6xl md:leading-[1.08]"
+        >
+          Powering a Sustainable Future with Solar Innovation
+        </motion.h1>
+
+        <motion.p
+          custom={2}
+          variants={fadeUp}
+          initial="hidden"
+          animate="show"
+          className="max-w-2xl text-lg leading-relaxed text-muted md:text-xl"
+        >
+          Clean energy solutions across India—utility solar, storage, and next-gen
+          infrastructure for enterprises, utilities, and communities.
+        </motion.p>
+
+        <motion.div
+          custom={3}
+          variants={fadeUp}
+          initial="hidden"
+          animate="show"
+          className="flex flex-wrap gap-4"
+        >
+          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <Link
+              href="/contact"
+              className="inline-flex rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-[0_16px_50px_-18px_rgba(34,197,94,0.65)] transition hover:bg-primary-strong"
+            >
+              Get a Quote
+            </Link>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <Link
+              href="/projects"
+              className="inline-flex rounded-full border border-white/15 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition hover:border-accent/50 hover:bg-white/10"
+            >
+              Explore Projects
+            </Link>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          custom={4}
+          variants={fadeUp}
+          initial="hidden"
+          animate="show"
+          className="flex flex-wrap gap-6 border-t border-white/10 pt-10 text-sm text-muted"
+        >
+          <div>
+            <p className="text-xs uppercase tracking-wide text-muted">Focus</p>
+            <p className="mt-1 font-medium text-foreground">Solar · BESS · Hydrogen</p>
+          </div>
+          <div className="hidden h-10 w-px bg-white/10 sm:block" aria-hidden />
+          <div>
+            <p className="text-xs uppercase tracking-wide text-muted">Model</p>
+            <p className="mt-1 font-medium text-foreground">IPP · EPC · Development</p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,27 +1,24 @@
+"use client";
+
 import {
   BatteryCharging,
-  CarFront,
-  Factory,
-  GraduationCap,
-  HardHat,
-  Leaf,
-  Network,
-  Recycle,
-  Settings,
+  Cable,
+  Cpu,
+  Droplets,
+  Gauge,
+  LineChart,
   Sun,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import { ServiceItem } from "@/types";
 
 const icons = {
   BatteryCharging,
-  CarFront,
-  Factory,
-  GraduationCap,
-  HardHat,
-  Leaf,
-  Network,
-  Recycle,
-  Settings,
+  Cable,
+  Cpu,
+  Droplets,
+  Gauge,
+  LineChart,
   Sun,
 };
 
@@ -33,10 +30,24 @@ export function ServiceCard({ service }: ServiceCardProps) {
   const Icon = icons[service.icon as keyof typeof icons] ?? Sun;
 
   return (
-    <article className="rounded-2xl border border-border bg-background-soft/60 p-6 transition hover:-translate-y-1 hover:border-primary/60">
-      <Icon className="mb-4 h-8 w-8 text-primary" />
-      <h3 className="mb-3 text-xl font-semibold text-white">{service.title}</h3>
-      <p className="text-sm leading-relaxed text-muted">{service.description}</p>
-    </article>
+    <motion.article
+      whileHover={{ y: -6 }}
+      transition={{ type: "spring", stiffness: 420, damping: 30 }}
+      className="group relative h-full overflow-hidden rounded-2xl border border-border bg-gradient-to-b from-background-elevated/90 to-background-soft/70 p-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
+    >
+      <div
+        className="pointer-events-none absolute -right-10 top-0 h-40 w-40 rounded-full bg-primary/5 blur-3xl transition group-hover:bg-primary/10"
+        aria-hidden
+      />
+      <div className="relative">
+        <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-primary/25 bg-primary/10 text-primary transition group-hover:border-primary/45 group-hover:bg-primary/15">
+          <Icon className="h-6 w-6" aria-hidden />
+        </span>
+        <h3 className="mt-5 text-xl font-semibold tracking-tight text-white">
+          {service.title}
+        </h3>
+        <p className="mt-3 text-sm leading-relaxed text-muted">{service.description}</p>
+      </div>
+    </motion.article>
   );
 }

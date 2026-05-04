@@ -6,7 +6,7 @@ import { services } from "@/lib/site-data";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore Vidish Urja's detailed renewable energy, EPC, O&M, storage, and sustainability services.",
+    "Solar IPP & EPC, BESS, power infrastructure, green hydrogen pathways, hybrid solar, and performance operations from Harmony Urja.",
 };
 
 export default function ServicesPage() {
@@ -14,10 +14,10 @@ export default function ServicesPage() {
     <div className="mx-auto w-full max-w-7xl px-6 py-20 lg:px-8">
       <SectionHeading
         eyebrow="Services"
-        title="Comprehensive offerings for modern energy systems"
-        description="Structured solutions across renewable development, engineering, operations, storage, EV infrastructure, and sustainable growth businesses."
+        title="Capability depth across generation, flexibility, and infrastructure"
+        description="Four strategic pillars anchor our offering—extended services cover rooftops, hybrids, operations analytics, and structured financing support."
       />
-      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
           <ServiceCard key={service.title} service={service} />
         ))}
