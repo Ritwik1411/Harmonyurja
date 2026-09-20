@@ -11,22 +11,22 @@ export function ContactForm() {
   };
 
   return (
-    <div className="rounded-2xl border border-border bg-background-soft/70 p-8">
+    <div className="rounded-2xl border border-border bg-white p-8 shadow-[0_12px_40px_-24px_rgba(6,25,58,0.14)]">
       <form className="space-y-5" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name" className="mb-2 block text-sm text-muted">
+          <label htmlFor="name" className="mb-2 block text-sm font-medium text-foreground">
             Name
           </label>
           <input
             id="name"
             name="name"
             required
-            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-white outline-none ring-primary/40 placeholder:text-muted focus:ring-2"
+            className="w-full rounded-xl border border-border bg-background-soft px-4 py-3 text-foreground outline-none ring-primary/30 placeholder:text-muted focus:ring-2"
             placeholder="Your full name"
           />
         </div>
         <div>
-          <label htmlFor="email" className="mb-2 block text-sm text-muted">
+          <label htmlFor="email" className="mb-2 block text-sm font-medium text-foreground">
             Email
           </label>
           <input
@@ -34,12 +34,24 @@ export function ContactForm() {
             name="email"
             type="email"
             required
-            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-white outline-none ring-primary/40 placeholder:text-muted focus:ring-2"
+            className="w-full rounded-xl border border-border bg-background-soft px-4 py-3 text-foreground outline-none ring-primary/30 placeholder:text-muted focus:ring-2"
             placeholder="you@company.com"
           />
         </div>
         <div>
-          <label htmlFor="message" className="mb-2 block text-sm text-muted">
+          <label htmlFor="phone" className="mb-2 block text-sm font-medium text-foreground">
+            Phone
+          </label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            className="w-full rounded-xl border border-border bg-background-soft px-4 py-3 text-foreground outline-none ring-primary/30 placeholder:text-muted focus:ring-2"
+            placeholder="Your phone number"
+          />
+        </div>
+        <div>
+          <label htmlFor="message" className="mb-2 block text-sm font-medium text-foreground">
             Message
           </label>
           <textarea
@@ -47,7 +59,7 @@ export function ContactForm() {
             name="message"
             required
             rows={5}
-            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-white outline-none ring-primary/40 placeholder:text-muted focus:ring-2"
+            className="w-full rounded-xl border border-border bg-background-soft px-4 py-3 text-foreground outline-none ring-primary/30 placeholder:text-muted focus:ring-2"
             placeholder="Tell us about your project or requirement."
           />
         </div>
@@ -59,7 +71,7 @@ export function ContactForm() {
         </button>
       </form>
       {submitted ? (
-        <p className="mt-4 text-sm text-primary">
+        <p className="mt-4 text-sm font-medium text-primary">
           Thank you. We&apos;ll get back to you shortly.
         </p>
       ) : null}

@@ -35,14 +35,14 @@ function SocialIcon({ icon }: { icon: "linkedin" | "twitter" | "youtube" }) {
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/90 bg-background-soft/60">
+    <footer className="bg-navy text-white">
       <div className="mx-auto grid w-full max-w-7xl gap-12 px-6 py-14 lg:grid-cols-12 lg:px-8">
-        <div className="space-y-4 lg:col-span-5">
-          <Link href="/" className="inline-block">
-            <Logo />
+        <div className="space-y-5 lg:col-span-5">
+          <Link href="/" className="inline-block rounded-lg bg-white px-4 py-3">
+            <Logo size="footer" />
           </Link>
-          <p className="max-w-md text-sm leading-relaxed text-muted">
-            {company.tagline} We develop, build, own, and operate solar and
+          <p className="max-w-md text-sm leading-relaxed text-white/75">
+            {company.slogan}. We develop, build, own, and operate solar and
             complementary clean energy assets across India—with governance,
             transparency, and performance at the core.
           </p>
@@ -50,7 +50,7 @@ export function Footer() {
 
         <div className="grid gap-10 sm:grid-cols-2 lg:col-span-7">
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-foreground">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
               Quick links
             </h3>
             <ul className="mt-4 space-y-2 text-sm">
@@ -58,7 +58,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-muted transition hover:text-white"
+                    className="text-white/75 transition hover:text-primary"
                   >
                     {link.label}
                   </Link>
@@ -67,18 +67,24 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-foreground">
-              Connect
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
+              Registered office
             </h3>
-            <ul className="mt-4 space-y-2 text-sm text-muted">
+            <ul className="mt-4 space-y-2 text-sm text-white/75">
               <li>{company.address}</li>
               <li>
-                <a className="hover:text-white" href={`tel:${company.phone.replace(/\s/g, "")}`}>
+                <a
+                  className="transition hover:text-primary"
+                  href={`tel:+91${company.phoneRaw}`}
+                >
                   {company.phone}
                 </a>
               </li>
               <li>
-                <a className="hover:text-white" href={`mailto:${company.email}`}>
+                <a
+                  className="transition hover:text-primary"
+                  href={`mailto:${company.email}`}
+                >
                   {company.email}
                 </a>
               </li>
@@ -91,7 +97,7 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={s.label}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background-elevated/80 text-muted transition hover:border-accent/40 hover:text-white"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white/80 transition hover:border-primary hover:bg-primary/20 hover:text-white"
                 >
                   <SocialIcon icon={s.icon} />
                 </a>
@@ -101,12 +107,12 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-border/70">
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-6 py-6 text-center text-xs text-muted sm:flex-row sm:items-center sm:justify-between sm:text-left lg:px-8">
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-6 py-6 text-center text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between sm:text-left lg:px-8">
           <p>
             © {new Date().getFullYear()} {company.legalName}. All rights reserved.
           </p>
-          <p className="text-muted/90">{company.tagline}</p>
+          <p>{company.slogan}</p>
         </div>
       </div>
     </footer>

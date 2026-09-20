@@ -36,7 +36,7 @@ export default function ProjectsPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
               Featured project
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-white">
+            <h2 className="mt-3 text-3xl font-semibold text-foreground">
               {sitamarhiProject.name}
             </h2>
             <p className="mt-4 text-muted">
@@ -46,35 +46,35 @@ export default function ProjectsPage() {
             <dl className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="rounded-xl border border-border bg-background-elevated/70 px-4 py-3">
                 <dt className="text-xs uppercase tracking-wide text-muted">AC capacity</dt>
-                <dd className="mt-1 text-lg font-semibold text-white">{sitamarhiProject.capacityAc}</dd>
+                <dd className="mt-1 text-lg font-semibold text-foreground">{sitamarhiProject.capacityAc}</dd>
               </div>
               <div className="rounded-xl border border-border bg-background-elevated/70 px-4 py-3">
                 <dt className="text-xs uppercase tracking-wide text-muted">DC capacity</dt>
-                <dd className="mt-1 text-lg font-semibold text-white">{sitamarhiProject.capacityDc}</dd>
+                <dd className="mt-1 text-lg font-semibold text-foreground">{sitamarhiProject.capacityDc}</dd>
               </div>
               <div className="rounded-xl border border-border bg-background-elevated/70 px-4 py-3">
                 <dt className="text-xs uppercase tracking-wide text-muted">Annual generation</dt>
-                <dd className="mt-1 text-lg font-semibold text-white">{sitamarhiProject.annualGen}</dd>
+                <dd className="mt-1 text-lg font-semibold text-foreground">{sitamarhiProject.annualGen}</dd>
               </div>
               <div className="rounded-xl border border-border bg-background-elevated/70 px-4 py-3">
                 <dt className="text-xs uppercase tracking-wide text-muted">Location</dt>
-                <dd className="mt-1 text-lg font-semibold text-white">{sitamarhiProject.location}</dd>
+                <dd className="mt-1 text-lg font-semibold text-foreground">{sitamarhiProject.location}</dd>
               </div>
               <div className="rounded-xl border border-border bg-background-elevated/70 px-4 py-3">
                 <dt className="text-xs uppercase tracking-wide text-muted">CUF</dt>
-                <dd className="mt-1 text-lg font-semibold text-white">{sitamarhiProject.cuf}</dd>
+                <dd className="mt-1 text-lg font-semibold text-foreground">{sitamarhiProject.cuf}</dd>
               </div>
               <div className="rounded-xl border border-border bg-background-elevated/70 px-4 py-3">
                 <dt className="text-xs uppercase tracking-wide text-muted">PR</dt>
-                <dd className="mt-1 text-lg font-semibold text-white">{sitamarhiProject.pr}</dd>
+                <dd className="mt-1 text-lg font-semibold text-foreground">{sitamarhiProject.pr}</dd>
               </div>
               <div className="rounded-xl border border-border bg-background-elevated/70 px-4 py-3">
                 <dt className="text-xs uppercase tracking-wide text-muted">IRR (indicative)</dt>
-                <dd className="mt-1 text-lg font-semibold text-white">{sitamarhiProject.irr}</dd>
+                <dd className="mt-1 text-lg font-semibold text-foreground">{sitamarhiProject.irr}</dd>
               </div>
               <div className="rounded-xl border border-border bg-background-elevated/70 px-4 py-3">
                 <dt className="text-xs uppercase tracking-wide text-muted">Payback</dt>
-                <dd className="mt-1 text-lg font-semibold text-white">{sitamarhiProject.payback}</dd>
+                <dd className="mt-1 text-lg font-semibold text-foreground">{sitamarhiProject.payback}</dd>
               </div>
             </dl>
             <Link
@@ -88,7 +88,7 @@ export default function ProjectsPage() {
       </section>
 
       <section className="rounded-2xl border border-border bg-background-elevated/60 p-8">
-        <h2 className="text-2xl font-semibold text-white">Delivery snapshot</h2>
+        <h2 className="text-2xl font-semibold text-foreground">Delivery snapshot</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {projectHighlights.map((item) => (
             <div
@@ -96,7 +96,7 @@ export default function ProjectsPage() {
               className="rounded-xl border border-border bg-background/60 p-4"
             >
               <p className="text-sm text-muted">{item.label}</p>
-              <p className="mt-1 text-base font-semibold text-white">{item.value}</p>
+              <p className="mt-1 text-base font-semibold text-foreground">{item.value}</p>
             </div>
           ))}
         </div>

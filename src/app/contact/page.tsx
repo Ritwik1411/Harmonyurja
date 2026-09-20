@@ -19,21 +19,22 @@ export default function ContactPage() {
           title="Tell us about your site, load, or investment thesis"
           description="We respond with a clear next step—technical intake, diligence outline, or leadership conversation—matched to your stage."
         />
-        <div className="rounded-2xl border border-border bg-background-elevated/70 p-7 text-sm text-muted">
-          <p className="text-base font-semibold text-white">{company.legalName}</p>
+        <div className="rounded-2xl border border-border bg-white p-7 text-sm text-muted shadow-sm">
+          <p className="text-base font-semibold text-foreground">{company.legalName}</p>
+          <p className="mt-1 text-sm text-primary">{company.slogan}</p>
           <ul className="mt-6 space-y-4">
             <li className="flex gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-navy" aria-hidden />
               <span>{company.address}</span>
             </li>
             <li className="flex gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
-              <a className="text-foreground hover:text-primary" href={`tel:${company.phone.replace(/\s/g, "")}`}>
+              <a className="text-foreground hover:text-primary" href={`tel:+91${company.phoneRaw}`}>
                 {company.phone}
               </a>
             </li>
             <li className="flex gap-3">
-              <Mail className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
+              <Mail className="mt-0.5 h-4 w-4 shrink-0 text-navy" aria-hidden />
               <a className="text-foreground hover:text-primary" href={`mailto:${company.email}`}>
                 {company.email}
               </a>

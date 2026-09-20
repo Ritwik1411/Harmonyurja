@@ -15,7 +15,7 @@ export function ServicesSection() {
         </p>
         <h2
           id="services-heading"
-          className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl"
+          className="mt-4 text-3xl font-semibold tracking-tight text-foreground md:text-4xl"
         >
           Integrated platforms from electrons to grid
         </h2>

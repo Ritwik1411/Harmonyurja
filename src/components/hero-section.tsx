@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { company } from "@/lib/site-data";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -19,19 +20,19 @@ const fadeUp = {
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[85vh] overflow-hidden">
+    <section className="relative min-h-[85vh] overflow-hidden bg-navy">
       <div className="absolute inset-0 -z-10">
         <Image
           src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=2000&q=85"
           alt="Solar photovoltaic plant at sunrise"
           fill
           priority
-          className="object-cover"
+          className="object-cover opacity-35"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/92 to-background/55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(56,189,248,0.18),transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/92 to-navy/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/50" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(79,143,23,0.22),transparent_55%)]" />
       </div>
 
       <div className="mx-auto flex w-full max-w-7xl flex-col justify-center gap-10 px-6 pb-24 pt-28 lg:min-h-[85vh] lg:px-8 lg:pb-32 lg:pt-36">
@@ -40,9 +41,9 @@ export function HeroSection() {
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="text-sm font-semibold uppercase tracking-[0.28em] text-accent"
+          className="text-sm font-semibold uppercase tracking-[0.28em] text-primary"
         >
-          Harmony Urja Pvt Ltd
+          {company.legalName}
         </motion.p>
 
         <motion.h1
@@ -60,10 +61,11 @@ export function HeroSection() {
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="max-w-2xl text-lg leading-relaxed text-muted md:text-xl"
+          className="max-w-2xl text-lg leading-relaxed text-white/80 md:text-xl"
         >
-          Clean energy solutions across India—utility solar, storage, and next-gen
-          infrastructure for enterprises, utilities, and communities.
+          {company.slogan}. Clean energy solutions across India—utility solar,
+          storage, and next-gen infrastructure for enterprises, utilities, and
+          communities.
         </motion.p>
 
         <motion.div
@@ -76,7 +78,7 @@ export function HeroSection() {
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Link
               href="/contact"
-              className="inline-flex rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-[0_16px_50px_-18px_rgba(34,197,94,0.65)] transition hover:bg-primary-strong"
+              className="inline-flex rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-[0_16px_50px_-18px_rgba(79,143,23,0.5)] transition hover:bg-primary-strong"
             >
               Get a Quote
             </Link>
@@ -84,7 +86,7 @@ export function HeroSection() {
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Link
               href="/projects"
-              className="inline-flex rounded-full border border-white/15 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition hover:border-accent/50 hover:bg-white/10"
+              className="inline-flex rounded-full border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition hover:border-primary hover:bg-primary/20"
             >
               Explore Projects
             </Link>
@@ -96,16 +98,21 @@ export function HeroSection() {
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="flex flex-wrap gap-6 border-t border-white/10 pt-10 text-sm text-muted"
+          className="flex flex-wrap gap-6 border-t border-white/15 pt-10 text-sm"
         >
           <div>
-            <p className="text-xs uppercase tracking-wide text-muted">Focus</p>
-            <p className="mt-1 font-medium text-foreground">Solar · BESS · Hydrogen</p>
+            <p className="text-xs uppercase tracking-wide text-white/60">Focus</p>
+            <p className="mt-1 font-medium text-white">Solar · BESS · Hydrogen</p>
           </div>
-          <div className="hidden h-10 w-px bg-white/10 sm:block" aria-hidden />
+          <div className="hidden h-10 w-px bg-white/15 sm:block" aria-hidden />
           <div>
-            <p className="text-xs uppercase tracking-wide text-muted">Model</p>
-            <p className="mt-1 font-medium text-foreground">IPP · EPC · Development</p>
+            <p className="text-xs uppercase tracking-wide text-white/60">Model</p>
+            <p className="mt-1 font-medium text-white">IPP · EPC · Development</p>
+          </div>
+          <div className="hidden h-10 w-px bg-white/15 sm:block" aria-hidden />
+          <div>
+            <p className="text-xs uppercase tracking-wide text-white/60">Office</p>
+          <p className="mt-1 font-medium text-white">Sector 31, Gurugram</p>
           </div>
         </motion.div>
       </div>

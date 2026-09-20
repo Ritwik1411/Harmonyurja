@@ -14,7 +14,7 @@ export function AboutSection() {
           </p>
           <h2
             id="about-heading"
-            className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl"
+            className="mt-4 text-3xl font-semibold tracking-tight text-foreground md:text-4xl"
           >
             India&apos;s energy transition, engineered for outcomes
           </h2>

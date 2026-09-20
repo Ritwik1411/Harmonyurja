@@ -12,15 +12,47 @@ export const siteUrl = "https://www.harmonyurja.com";
 export const company = {
   shortName: "Harmony Urja",
   legalName: "Harmony Urja Pvt Ltd",
+  slogan: "Energizing a Sustainable Tomorrow",
   tagline: "Clean Energy. Smarter Tomorrow.",
   email: "contact@harmonyurja.com",
-  phone: "+91 124 518 4200",
-  address: "Gurugram, Haryana, India",
+  phone: "+91 99103 18305",
+  phoneRaw: "9910318305",
+  address: "House 381, First Floor, Sector 31, Gurugram, Haryana, India",
+  addressShort: "House 381, First Floor, Sector 31",
+};
+
+export const leadership = {
+  name: "Mamta Rani",
+  title: "Chairperson & Managing Director",
+  photo: "/mamta-rani.png",
+  quote:
+    "Clean energy must be reliable, bankable, and built with integrity—so communities and investors can trust every megawatt we deliver.",
+  bio: "Mamta Rani leads Harmony Urja Pvt Ltd with a clear mandate: develop, build, own, and operate solar power plants that strengthen India's energy transition. Under her stewardship, the company combines disciplined EPC execution with an IPP owner's mindset—safety, performance ratio, and transparent governance at the centre of every project.",
+  vision:
+    "To make Harmony Urja a trusted national partner in solar IPP & EPC—delivering utility-scale, rooftop, hybrid, and storage-ready assets that energize a sustainable tomorrow for India.",
+  pillars: [
+    {
+      title: "Integrity in execution",
+      description:
+        "Every plant is engineered for measurable yield, safety, and compliance—not promises.",
+    },
+    {
+      title: "Bankable clean power",
+      description:
+        "Techno-commercial discipline so lenders, off-takers, and communities can rely on outcomes.",
+    },
+    {
+      title: "India's energy transition",
+      description:
+        "Scale solar, BESS, and enabling infrastructure with a long-term ownership culture.",
+    },
+  ],
 };
 
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+  { label: "Vision", href: "/vision" },
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },
@@ -28,6 +60,7 @@ export const navItems: NavItem[] = [
 
 export const footerLinks: NavItem[] = [
   { label: "About", href: "/about" },
+  { label: "CMD Vision", href: "/vision" },
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },

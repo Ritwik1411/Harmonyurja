@@ -7,9 +7,10 @@ export function HomeContactSection() {
   return (
     <section
       id="contact"
-      className="mx-auto w-full max-w-7xl px-6 py-20 lg:px-8"
+      className="border-t border-border bg-background-soft"
       aria-labelledby="contact-heading"
     >
+      <div className="mx-auto w-full max-w-7xl px-6 py-20 lg:px-8">
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
         <ScrollReveal>
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
@@ -17,7 +18,7 @@ export function HomeContactSection() {
           </p>
           <h2
             id="contact-heading"
-            className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl"
+            className="mt-4 text-3xl font-semibold tracking-tight text-foreground md:text-4xl"
           >
             Start a conversation—EPC, IPP, or partnership
           </h2>
@@ -29,7 +30,7 @@ export function HomeContactSection() {
 
           <ul className="mt-10 space-y-5 text-sm text-muted">
             <li className="flex gap-3">
-              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-accent/30 bg-accent/10 text-accent">
+              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-navy/15 bg-navy/5 text-navy">
                 <MapPin className="h-4 w-4" aria-hidden />
               </span>
               <span>
@@ -49,14 +50,14 @@ export function HomeContactSection() {
                 </span>
                 <a
                   className="text-base text-foreground hover:text-primary"
-                  href={`tel:${company.phone.replace(/\s/g, "")}`}
+                  href={`tel:+91${company.phoneRaw}`}
                 >
                   {company.phone}
                 </a>
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-accent/30 bg-accent/10 text-accent">
+              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-navy/15 bg-navy/5 text-navy">
                 <Mail className="h-4 w-4" aria-hidden />
               </span>
               <span>
@@ -77,6 +78,7 @@ export function HomeContactSection() {
         <ScrollReveal delay={0.08}>
           <ContactForm />
         </ScrollReveal>
+      </div>
       </div>
     </section>
   );

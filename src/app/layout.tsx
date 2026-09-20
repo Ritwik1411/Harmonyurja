@@ -48,6 +48,7 @@ const organizationJsonLd = {
   telephone: company.phone,
   address: {
     "@type": "PostalAddress",
+    streetAddress: "House 381, First Floor, Sector 31",
     addressLocality: "Gurugram",
     addressRegion: "Haryana",
     addressCountry: "IN",

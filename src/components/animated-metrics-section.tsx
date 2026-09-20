@@ -64,18 +64,18 @@ function AnimatedMetricCard({ metric }: { metric: MetricItem }) {
   return (
     <article
       ref={ref}
-      className="group relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-background-elevated/90 to-background-soft/80 p-7 shadow-[0_0_0_1px_rgba(56,189,248,0.06)]"
+      className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/10 p-7 backdrop-blur-sm"
     >
       <div
-        className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-primary/10 blur-2xl transition group-hover:bg-primary/15"
+        className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-primary/20 blur-2xl transition group-hover:bg-primary/30"
         aria-hidden
       />
       <p className="font-mono text-3xl font-semibold tracking-tight text-white md:text-4xl">
-        <span className="text-accent">{metric.prefix}</span>
+        <span>{metric.prefix}</span>
         {text}
         <span className="text-primary">{metric.suffix}</span>
       </p>
-      <p className="mt-3 text-sm leading-snug text-muted">{metric.label}</p>
+      <p className="mt-3 text-sm leading-snug text-white/70">{metric.label}</p>
     </article>
   );
 }
@@ -84,10 +84,10 @@ export function AnimatedMetricsSection() {
   return (
     <section
       id="metrics"
-      className="relative border-y border-border/80 bg-background-soft/40"
+      className="relative bg-navy"
       aria-labelledby="metrics-heading"
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
       <div className="mx-auto w-full max-w-7xl px-6 py-20 lg:px-8">
         <ScrollReveal className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
@@ -99,7 +99,7 @@ export function AnimatedMetricsSection() {
           >
             Performance you can measure
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-muted">
+          <p className="mt-4 text-lg leading-relaxed text-white/75">
             Live counters snapshot operational momentum across megawatts delivered,
             executed projects, avoided emissions, and annual generation from our
             flagship Sitamarhi asset.
